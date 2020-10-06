@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var uuid = require('uuid');
 var basicAuth = require('basic-auth');
@@ -121,7 +122,7 @@ myNuts.init()
 
 // Start the HTTP server
 .then(function() {
-    var server = app.listen(process.env.PORT || 5000, function () {
+    var server = app.listen(process.env.PORT || 5000, process.env.SERVER, function () {
         var host = server.address().address;
         var port = server.address().port;
 
